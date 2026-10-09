@@ -124,7 +124,7 @@ Si el curso con ID `1` existe, la respuesta esperada es:
 1. Busca el curso por su clave primaria antes de modificarlo.
 2. Trabaja sobre el objeto existente; construir uno nuevo podría producir una inserción.
 3. Asigna los datos validados, confirma los cambios y recarga el registro.
-4. No aceptes un nuevo ID como parte de los camahora ese readme pon estos retospos actualizables.
+4. No aceptes un nuevo ID como parte de los campos actualizables.
 5. Un valor `false` también es un dato que debes guardar; no lo descartes por ser falso.
 
 ### Pruebas de aceptación
