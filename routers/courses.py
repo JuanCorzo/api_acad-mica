@@ -7,7 +7,8 @@ from schemas.course import CourseCreate, CourseResponse
 from services.course_service import (
     create_course,
     list_courses,
-    get_course
+    get_course,
+    delete_course
 )
 
 
@@ -62,6 +63,23 @@ def get_course_endpoint(
 ):
 
     return get_course(
+        course_id,
+        session
+    )
+
+
+# DELETE /courses/{course_id}: elimina el curso si existe.
+@router.delete(
+    "/{course_id}",
+    status_code=200
+)
+def delete_course_endpoint(
+    course_id: int,
+    # Depends obtiene y libera la sesión mediante get_session.
+    session: Session = Depends(get_session)
+):
+
+    return delete_course(
         course_id,
         session
     )

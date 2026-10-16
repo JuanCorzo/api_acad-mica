@@ -59,3 +59,18 @@ def get_course(
         )
 
     return course
+
+
+def delete_course(
+    course_id: int,
+    session: Session
+):
+
+    # Reutiliza la búsqueda y el 404 si el curso no existe.
+    course = get_course(course_id, session)
+
+    # Marca el registro para eliminación y confirma en SQLite.
+    session.delete(course)
+    session.commit()
+
+    return {"message": "Course deleted"}
