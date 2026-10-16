@@ -3,7 +3,7 @@ from fastapi import HTTPException
 from sqlmodel import Session, select
 
 from models.course import Course
-from schemas.course import CourseCreate
+from schemas.course import CourseCreate, CourseUpdate
 
 
 def create_course(
@@ -57,6 +57,27 @@ def get_course(
             status_code=404,
             detail="Course not found"
         )
+
+    return course
+
+
+def update_course(
+    course_id: int,
+    course_data: CourseUpdate,
+    session: Session
+):
+
+    # Busca el curso existente; reutiliza el 404 si no está.
+    course = get_course(course_id, session)
+
+    # Actualiza sobre el mismo objeto para conservar el ID.
+    course.name = course_data.name
+    course.credits = course_data.credits
+    course.active = course_data.active
+
+    session.add(course)
+    session.commit()
+    session.refresh(course)
 
     return course
 
