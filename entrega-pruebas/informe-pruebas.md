@@ -3,7 +3,7 @@
 | Campo | Valor |
 | --- | --- |
 | Estudiante | Juan Corzo |
-| Fecha | 2026-03-15 |
+| Fecha | 2026-10-15 |
 | Proyecto | API Académica (FastAPI + SQLModel + SQLite) |
 | Comando de inicio | `python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000` |
 | URL base | http://127.0.0.1:8000 |
