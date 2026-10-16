@@ -1,8 +1,8 @@
 # API Académica
 
-API educativa para administrar cursos y estudiantes con **FastAPI, SQLModel y SQLite**. El código incluye comentarios en español para estudiar cómo se conectan las rutas HTTP, la validación de datos y la persistencia.
+API educativa para administrar cursos y estudiantes con **FastAPI, SQLModel y SQLite**.
 
-La explicación detallada del proyecto, la práctica con Swagger y los ejercicios están en la [guía para estudiantes](docs.md). Las pruebas documentadas están en [entrega-pruebas/informe-pruebas.md](entrega-pruebas/informe-pruebas.md).
+Las pruebas documentadas están en [entrega-pruebas/informe-pruebas.md](entrega-pruebas/informe-pruebas.md).
 
 ## Funcionalidades implementadas
 
@@ -180,13 +180,9 @@ api_acad-mica/
 │   ├── informe-pruebas.md        # Informe de pruebas
 │   └── evidencias/               # Capturas de Swagger
 ├── requirements.txt
-├── docs.md
-├── ejercicio.md
 └── README.md
 ```
 
 El flujo principal es: **petición HTTP → router y validación → servicio → base de datos → respuesta JSON**.
 
 Ambos recursos comparten la misma conexión SQLite (`database.db`) con tablas distintas.
-
-Para seguir el código paso a paso, comprender `Depends`, `Session`, `commit()` y `refresh()`, o resolver problemas de ejecución, consulta [docs.md](docs.md).
